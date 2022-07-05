@@ -14,8 +14,12 @@ function sumar()
 	let numeroDos;
 	let resultado;
 
-	numeroUno = parseInt(document.getElementById("txtIdNumeroUno").value);
-	numeroDos = parseInt(document.getElementById("txtIdNumeroDos").value);
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	
+	numeroUno = parseInt(numeroUno);
+	numeroDos = parseInt(numeroDos);
+
 	resultado = numeroUno + numeroDos;
 
 	alert("La suma es " + resultado);
