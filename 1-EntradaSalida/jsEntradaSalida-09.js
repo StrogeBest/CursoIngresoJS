@@ -1,7 +1,7 @@
 /* 
 Javier Vilchez
 Div E
-Ejercicio 6 E/S
+Ejercicio 9 E/S
 
 Debemos lograr tomar el importe por ID ,
 transformarlo a entero (parseInt), luego
@@ -12,12 +12,15 @@ en el cuadro de texto "RESULTADO".
 function mostrarAumento()
 {
 	let sueldo; 
-	let resultado;
+	let aumento;
+	let sueldoTotal;
 
 	sueldo = document.getElementById("txtIdSueldo").value;
 	sueldo = parseInt(sueldo);
 
-	resultado = (sueldo * 10 / 100) + sueldo;
+	aumento = sueldo * 10 / 100;
 
-	document.getElementById("txtIdResultado").value = resultado;
+	sueldoTotal = sueldo + aumento;
+
+	document.getElementById("txtIdResultado").value = sueldoTotal;
 }
