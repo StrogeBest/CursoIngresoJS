@@ -8,7 +8,9 @@ function mostrar()
 {
 	let mensaje;
 	let mes;
+
 	mes = document.getElementById("txtIdMes").value;
+	mensaje = "No ha seleccionado un mes valido";
 
 	switch (mes) {
 		case "Enero":
