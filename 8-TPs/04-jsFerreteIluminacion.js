@@ -149,5 +149,7 @@ function CalcularPrecio ()
                 document.getElementById("txtIdprecioDescuento").value = precioDescuento;
             }
         }
+    }else{
+        document.getElementById("txtIdprecioDescuento").value = precioTotal;
     }
 }
