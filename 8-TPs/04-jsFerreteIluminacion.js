@@ -1,7 +1,7 @@
 /*
 Javier Vilchez
 Div E
-Trabajo Practico - Ejercicio 4 SWITCH
+Trabajo Practico - Ejercicio 4 IF - SWITCH
 
 4. Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
@@ -24,14 +24,20 @@ function CalcularPrecio ()
     let impuesto;
     let precioImpuesto;
     let precioFinal;
+
+    let mensaje;
     
     cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
     precioTotal = cantidadLamparas * 35;
 
-    switch (cantidadLamparas) {
+    // PUNTO A
+    if (cantidadLamparas >= 6) {
+        // Descuento del 50%
+        porcentaje = 50;
+    }else{
         // PUNTO B
-        case 5:
+        if (cantidadLamparas == 5) {
             switch (marca) {
                 case "ArgentinaLuz":
                     // Descuento del 40%
@@ -42,47 +48,42 @@ function CalcularPrecio ()
                     porcentaje = 30;       
                     break;
             }
-            break;
-        // PUNTO C
-        case 4:
-            switch (marca) {
-                case "ArgentinaLuz":
-                case "FelipeLamparas":
-                    // Descuento del 25%
-                    porcentaje = 25;       
-                    break;
-                default:
-                    // Descuento del 20%
-                    porcentaje = 20;       
-                    break;
+        }else{
+            // PUNTO C
+            if (cantidadLamparas == 4) {
+                switch (marca) {
+                    case "ArgentinaLuz":
+                    case "FelipeLamparas":
+                        // Descuento del 25%
+                        porcentaje = 25;       
+                        break;
+                    default:
+                        // Descuento del 20%
+                        porcentaje = 20;       
+                        break;
+                }
+            }else{
+                // PUNTO D
+                if (cantidadLamparas == 3) {
+                    switch (marca) {
+                        case "ArgentinaLuz":
+                            // Descuento del 15%
+                            porcentaje = 15;       
+                            break;
+                        case "FelipeLamparas":
+                            // Descuento del 10%
+                            porcentaje = 10;       
+                            break;
+                        default:
+                            // Descuento del 5%
+                            porcentaje = 5;       
+                            break;
+                    }
+                }else{
+                    porcentaje = 0;
+                }
             }
-            break;
-        // PUNTO D
-        case 3:
-            switch (marca) {
-                case "ArgentinaLuz":
-                    // Descuento del 15%
-                    porcentaje = 15;       
-                    break;
-                case "FelipeLamparas":
-                    // Descuento del 10%
-                    porcentaje = 10;       
-                    break;
-                default:
-                    // Descuento del 5%
-                    porcentaje = 5;       
-                    break;
-            }
-            break;
-        case 2:
-        case 1:
-            porcentaje = 0;  
-            break;
-        // PUNTO A
-        default:
-            // Descuento del 50%
-            porcentaje = 50;  
-            break;
+        }
     }
 
     descuento = precioTotal * porcentaje / 100;
@@ -96,11 +97,18 @@ function CalcularPrecio ()
 
         alert("Usted pago " + impuesto + " de IIBB.");
 
-        precioFinal = precioImpuesto
+        precioFinal = precioImpuesto;
     }else{ 
-        precioFinal = precioDescuento
+        precioFinal = precioDescuento;
     }   
 
-    // Muestro el precio final
-    document.getElementById("txtIdprecioDescuento").value = precioFinal;
+    // Si el precio final es mayor a 1 muestro el precio final
+    if (precioFinal > 0) {
+        mensaje = precioFinal;
+    }else{
+        alert("La cantidad de lamparas no puede ser negativo");
+        mensaje = "";
+    }
+
+    document.getElementById("txtIdprecioDescuento").value = mensaje;
 }
