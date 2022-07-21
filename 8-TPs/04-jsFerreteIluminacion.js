@@ -31,6 +31,15 @@ function CalcularPrecio ()
     marca = document.getElementById("Marca").value;
     precioTotal = cantidadLamparas * 35;
 
+    switch (cantidadLamparas) {
+        case value:
+            
+            break;
+    
+        default:
+            break;
+    }
+
     // PUNTO A
     if (cantidadLamparas >= 6) {
         // Descuento del 50%
