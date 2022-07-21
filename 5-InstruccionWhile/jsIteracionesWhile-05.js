@@ -1,12 +1,19 @@
 /*
-Al presionar el botón pedir un sexo
-'f' para femenino, 'm' para masculino.*/
+Javier Vilchez
+Div E
+Ejercicio 5 WHILE
+
+Al presionar el botón pedir un sexo 'f' para femenino, 'm' para masculino.
+*/
+
 function mostrar()
 {
-	var sexoIngresado;
-	sexoIngresado = prompt("ingrese f ó m .");
+	let sexoIngresado;
+	sexoIngresado = prompt("ingrese f ó m.");
+	
+	while (sexoIngresado != "f" && sexoIngresado != "m") {
+		sexoIngresado = prompt("INCORRECTO. Ingrese f ó m.");
+	}
 
-
-
-	txtIdSexo.value=sexoIngresado;
+	document.getElementById("txtIdSexo").value=sexoIngresado;
 }//FIN DE LA FUNCIÓN
