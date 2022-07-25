@@ -23,7 +23,7 @@ function mostrar()
 		contador++;
 	}
 
-	promedio = acumulador / contador
+	promedio = acumulador / contador;
 
 	document.getElementById("txtIdSuma").value = acumulador;
 	document.getElementById("txtIdPromedio").value = promedio;
