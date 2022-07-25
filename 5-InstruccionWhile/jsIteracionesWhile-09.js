@@ -1,21 +1,47 @@
 /*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.*/
+Javier Vilchez
+Div E
+Ejercicio 9 WHILE
+
+Al presionar el botón pedir  números  hasta que el usuario quiera, mostrar el número máximo y el número mínimo ingresado.
+*/
+
 function mostrar()
-{	// declarar variables
-	var banderaDelPrimero;
-	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
-	var respuesta;
-	//iniciar variables
-	banderaDelPrimero="es el primero";
-	respuesta='si';
-	while(respuesta=="si")
+{	
+	// Declarar variables
+	let banderaDelPrimero;
+	let numeroIngresado;
+	let numeroMaximo;
+	let numeroMinimo;
+	let respuesta;
+	
+	// Iniciar variables
+	banderaDelPrimero = 0;
+	respuesta = "si";
+
+	while(respuesta == "si")
 	{
-		
-		respuesta=prompt("desea continuar?");
+		numeroIngresado = parseInt(prompt("Ingrese un numero"));
+
+		if (!banderaDelPrimero) {
+			numeroMaximo = numeroIngresado;
+			numeroMinimo = numeroIngresado;
+			banderaDelPrimero = 1;
+		}else{
+			// Numero maximo
+			if (numeroIngresado > numeroMaximo) {
+				numeroMaximo = numeroIngresado;
+			}
+			
+			// Numero minimo
+			if (numeroIngresado < numeroMinimo) {
+				numeroMinimo = numeroIngresado;
+			}
+		}
+	
+		respuesta=prompt("¿Desea continuar? si/no");
 	}
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
+	
+	document.getElementById("txtIdMaximo").value = numeroMaximo;
+	document.getElementById("txtIdMinimmo").value = numeroMinimo;
 }//FIN DE LA FUNCIÓN
