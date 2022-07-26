@@ -27,6 +27,8 @@ function mostrar()
     let cantidadMasculino = 0;
     let acumuladorNotaFemenino = 0;
     let cantidadFemenino = 0;
+    let promedioNotaMasculino;
+    let promedioNotaFemenino;
 
     let respuesta = true;
 
